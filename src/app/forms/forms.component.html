@@ -1,0 +1,63 @@
+<form #form="ngForm">
+  <h3>Formulário</h3>
+  <label>
+    Nome completo:
+    <input type="text" name="nome" ngModel>
+  </label>
+  <br>
+
+  <h3>Seu sexo</h3>
+  <label>
+    Masculino:
+    <input type="radio" name="sexo" value="masculino" ngModel>
+  </label>
+  <br>
+
+  <label>
+    Feminino:
+    <input type="radio" name="sexo" value="feminino" ngModel>
+  </label>
+  <br>
+
+  <label>
+    Outros:
+    <input type="radio" name="sexo" value="outros" ngModel>
+  </label>
+  <br>
+
+  <h3>Suas Competencias</h3>
+  <label>
+    Angular:
+    <input type="checkbox" name="angular" ngModel>
+  </label>
+  <label>
+    React Js:
+    <input type="checkbox" name="reactjs" ngModel>
+  </label>
+  <label>
+    HTML:
+    <input type="checkbox" name="html" ngModel>
+  </label>
+  <label>
+    TypeScript:
+    <input type="checkbox" name="typescript" ngModel>
+  </label>
+<br>
+<br>
+  <select name="experiencia" ngModel>
+    <option value=""> Selecione em qual tem mais experiencia </option>
+    <option value="angular"> Angular </option>
+    <option value="reactjs"> React Js </option>
+    <option value="html"> HTML </option>
+    <option value="typescript"> TypeScript </option>
+  </select>
+  <br>
+<br>
+  <select name="regiao" ngModel>
+    <option value=""> Selecione em qual estado reside </option>
+<option *ngFor="let item of listEstados">{{item.estado}}</option>
+  </select>
+</form>
+    <br>
+    <br>
+    {{form.value | json}}
